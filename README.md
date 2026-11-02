@@ -112,7 +112,7 @@ Measured on generated data with a known answer: 2,000 ledger rows with posting d
 | Data | Precision | Recall | Time |
 |---|---|---|---|
 | 2,000 rows, 5 seeds | 97.7% to 98.6% | 96.1% to 97.6% | under 0.2 s |
-| 60,000 ledger and 53,126 bank rows | 94.9% | 92.6% | 3.9 s |
+| 60,000 ledger and 53,126 bank rows | 94.9% | 92.6% | 3.9 s on an Apple Silicon laptop, 11.5 s on a GitHub Actions runner |
 
 These numbers describe my generator's patterns. Your accuracy depends on your data, so check results before trusting them, especially at first. Accuracy drops when many transactions share nearly the same amount within a few days, because amount and date can't tell them apart. References and descriptions help there.
 
