@@ -1,0 +1,9 @@
+id,date,amount,description,reference
+L1,2026-03-02,-45.10,Payment to Acme Office Supply,
+L2,2026-03-03,1200.00,Payment from Northstar Freight INV-2041,INV-2041
+L3,2026-03-03,49.00,Card sale #881,
+L4,2026-03-03,120.00,Card sale #882,
+L5,2026-03-04,35.50,Card sale #883,
+L6,2026-03-05,-250.00,Check 1042 to Ironwood Legal,1042
+L7,2026-03-06,-89.99,Payment to Lumen Telecom,
+L8,2026-03-09,-400.00,Check 1043 to Evergreen Rent,1043

@@ -1,0 +1,31 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+    tags: ["v*"]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+          cache: maven
+      - name: Build and test, including PostgreSQL tests in Docker
+        run: mvn -B verify
+      - name: Try the examples
+        run: |
+          java -jar recon-cli/target/recon.jar match examples/ledger.csv examples/bank.ofx --tolerance 0.25 --fee-percent 2.9 --fee-fixed 0.30
+          java -jar recon-cli/target/recon.jar match examples/ledger.csv examples/bank-debit-credit.csv \
+            --right-mapping examples/bank-debit-credit-mapping.json --tolerance 0.25 --fee-percent 2.9 --fee-fixed 0.30
+      - uses: actions/upload-artifact@v4
+        with:
+          name: recon-jars
+          path: |
+            recon-cli/target/recon.jar
+            recon-api/target/recon-api.jar

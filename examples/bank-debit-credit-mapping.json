@@ -1,0 +1,8 @@
+{
+  "date": "Posted Date",
+  "dateFormat": "MM/dd/yyyy",
+  "debit": "Debit",
+  "credit": "Credit",
+  "description": "Details",
+  "reference": "Check Number"
+}
